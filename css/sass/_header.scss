@@ -1,0 +1,220 @@
+.header{
+    @include FlexCenter();
+    width: 100%;
+    position: relative;
+
+    &.hidden{
+      transform: translateY(100%);
+    }
+
+  
+    .navigation{
+     @include flexMix(100%,100%,flex, space-around, row, none); 
+     padding: 1rem;
+     
+  
+      .nav-logo{    
+        z-index: 10;
+        
+        a{
+            text-decoration: none;
+            @include infoColor();
+            font-weight: map-get($fontWeight, 'xxxl'); 
+            font-size: clamp(1.8rem, 0.3rem + 4.8vw, 3rem);
+           
+        }
+        span{
+          @include headColor;
+        }
+      }
+  
+      .nav-links{
+        @include FlexCenter();
+        left: -4.5rem;
+        position: relative;
+  
+        #ul{
+          @include FlexCenter();
+          gap: 2rem;
+          
+          a{
+            text-decoration: none;
+            color: $secondary;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+
+           &.active{
+            color: #FFA600;
+           }
+          }
+        }
+      }
+  
+      .nav-toggle-links{
+        @include flexMix(100%, auto, flex, center, column, #FFA600);
+        padding: 1.2rem 0.7rem;
+        border-radius: 50%;
+        cursor: pointer;
+  
+        .span-toggle{
+          z-index: 3;
+          
+          @include flexMix(100%, auto,flex,  center, column, none);
+         
+          .span{
+           @include flexMix(100%, auto,flex, center, column, none);
+           gap: 0.5rem;
+           
+          
+          span{
+            @include span(2rem, 3px);
+  
+            &:nth-child(1){
+              z-index: 3;
+              transition: 0.5s;
+            }
+            &:nth-child(2){
+              z-index: 3;
+              transition: 0.5s;
+            }
+          }
+  
+          }
+  
+          .nav-links-portfolio{
+            @include links(150px,200px, 5rem 3rem);
+            border-radius: 50px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: 0.5s;
+
+            .name{
+                @include infoColor();
+                font-size: 1.5rem;
+                font-weight: map-get($fontWeight, 'xl'); 
+                display: none;
+            }
+
+            a{   
+              @include letterStyle(capitalize, none, map-get($colors, 'primary'));
+              font-weight: map-get($fontWeight, 'xl'); 
+              transition: 0.5s ease-in-out;
+
+              &:hover{
+                scale: 1.01; 
+                margin-left: 0.5rem;
+               }
+            }
+
+            .line-link{
+                width: 140px;
+                height: 3px;
+                @include bgPrimaryColor();
+                display: none;
+            }
+
+            #ul{
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                
+             
+            }
+
+            .links-a{
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               text-align: center;
+
+              
+               
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+
+
+
+
+
+
+@include xl {
+    .header{
+        .navigation{
+            justify-content: space-between;
+            padding: 1rem 5rem;
+            .nav-links{
+                display: none;
+            }
+            .nav-toggle-links{
+
+                    .span-toggle{
+                        .nav-links-portfolio{
+                            @include links(190px, auto, 5rem 2rem);
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            
+                            .name{
+                                display: flex;
+
+                            }
+
+                            #ul{
+                                display: flex;
+                            }
+                }
+            }
+                
+           
+            
+        }
+      }
+    }
+}
+
+@include md{
+    .header{
+        .navigation{
+            padding: 1rem 2rem;
+
+            .nav-toggle-links{
+                .span-toggle{
+                    .nav-links-portfolio{
+                        justify-content: center;
+                        align-items: center;
+                        align-items: flex-start;
+                        position: absolute;
+                        @include links(100vw, 500px, 5rem 2rem);
+                        left: 0;
+                        top: -500px;
+                        border-radius: 0px;
+                        transition:  0.5s;
+                    }
+
+                    .links-a{
+                      align-items: flex-start;
+                      
+                    }
+
+
+                    #ul{
+                      margin-right: auto;
+    
+                      align-items: flex-start;
+                    }
+
+                    
+                }
+            }
+        }
+    }
+}
+

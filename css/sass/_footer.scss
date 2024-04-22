@@ -1,0 +1,22 @@
+.footer{
+    @include flexMix(100%, 100%, none, center, column, transparent);
+    position: relative;
+    // padding-top: 3rem;
+
+    .footer-2nd{
+        @include FlexCenter();
+        flex-direction: column;
+        padding: 2rem 0rem;
+
+        .privacy{
+            @include infotextColor();
+            @extend %heroCenter;
+        }
+
+        a{
+            text-decoration: none;
+            @include FlexCenter();
+            @include headColor();
+        }
+    }
+}

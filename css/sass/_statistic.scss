@@ -1,0 +1,248 @@
+.statistic{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    // @include FlexCenter();
+    @include percent();
+    padding-top: 10rem;
+
+    .inflation-statistic{
+        padding: 0 2rem;
+        @include percent();
+        
+
+        .viewmore-sort-list{
+            @include flexMix(auto, 100%, flex, center, row, $bg-wrapper);
+
+            #svg-map{
+                @include percent();
+                position: sticky;
+                top: 0;
+                margin-bottom: auto;
+                
+                
+                .Inflation-update{
+                    
+                    gap: 2rem;
+                    padding: 1rem;
+                    flex-wrap: wrap;
+                    font-weight: map-get($fontWeight, 'xl');
+                    color: $primary;
+                    font-size: clamp(1.3rem, -0.25rem + 4vw, 2rem);
+                    @include flexMix(100%, 100%, flex, space-evenly, row, $secondary);
+                    @extend %heroCenter;
+                }
+
+                .name-country-svg{
+                    @include flexMix(100%, 100%, flex, space-evenly, row, none);
+                    gap: 2rem;
+                    padding: 1rem;
+                    flex-wrap: wrap;
+                    
+                    .country-name, .rank, .inflation-country-rate{
+                        @include FlexCenter();
+                        gap: 0.5rem;
+                        @include headColor();
+                        font-size: 1rem;
+                    }
+
+                    #country-name-svg, #rank-country, #country-rate-percent{
+                        color: $secondary;
+                    }
+                }
+
+                .svg{
+                    width: 100%;
+                    max-width: 1200px;
+                    margin-top: -13rem;
+                    
+                }
+            }
+
+            // 
+            .content-more-sort-inflation{
+                @include flexMix(100%, 100%, flex, center, column, transparent);
+                position: relative;
+                border-left: 5px solid $primary;
+               
+                gap: 1rem;
+
+                .head-content-more{
+                    @include flexMix(100%, 100%, flex, space-evenly, row, $secondary);
+                    gap: 2rem;
+                    padding: 1rem;
+                    flex-wrap: wrap;
+                    font-size: clamp(1.3rem, -0.25rem + 4vw, 2rem);
+                    font-weight: map-get($fontWeight, 'xl');
+                    color: $primary;
+                    @extend %heroCenter;
+                    
+                    
+                }
+
+                .body-sort-inflation-list{
+                    @include Flexleft();
+                    @include percent();
+                    flex-direction: column;
+                    gap: 1rem;
+                    animation: 2s linear infinite;
+                    padding: 0rem 2rem;
+                    
+                    #rate-inflation{
+                        @include Flexleft();
+                        flex-direction: column;
+                        background-color: $info-wrapper-color;
+                        padding: 0.5rem;
+                        color: $primary;
+                        // animation: width 0.5s linear;
+                        #name-list-sort{
+                            font-weight: map-get($fontWeight, 'xl');
+                            color: $primary;
+                           
+                        }
+
+                        #rate-percent{
+                            font-size: 0.7rem;
+                            @include headColor();
+                        }
+                    }
+                }
+
+                .search-button{
+                    @include Flexleft();
+                    @include percent();
+                    margin-top: 10rem;
+
+                    input{
+                        @include percent;
+                        padding: 1rem;
+                        border: none;
+                        outline: none;
+                    }
+                }
+
+                .table{
+                    scrollbar-width: none;
+                    height: 100vh;
+                    width: 100%;
+                    background-color: $info-wrapper-color;
+                    overflow: auto;
+
+                    table{
+                        @include percent();
+                    }
+                    
+                    th{
+                        @include headColor();
+                        font-size: 1.5rem;
+
+                       
+                    }
+
+                    tr{
+                        @include flexCommand(space-between);
+                        @include percent();
+                        padding: 0.5rem 1rem;
+
+                        &:nth-child(even){
+                            background-color: $secondary;
+                        }
+
+                       
+
+                        td{
+                                color: $primary;
+                                font-weight: map-get($fontWeight, 'xl');
+                                font-size: clamp(0.875rem, 0.6406rem + 0.75vw, 1.0625rem);
+
+                               
+                                &:nth-child(2){
+                                    text-align: center;
+                                }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes width {
+    0%{
+        width: 0;
+    }100%{
+        width: 100%;
+    }
+}
+
+// .fill{
+//     opacity: 0.3;
+// }
+
+// .fill-add{
+//     opacity: 1;
+// }
+
+
+.transition{
+    transition: width 1s ease;
+}
+
+
+
+
+
+@include xl{
+    .statistic{
+    
+        .inflation-statistic{
+            
+    
+            .viewmore-sort-list{
+                @include flexMix(default, default, default, default, column, default);
+
+                #svg-map{
+                    position: relative;
+                    top: 0;
+                    margin-bottom: auto;
+                    
+    
+    
+                    .svg{
+                        width: 100%;
+                        
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+@include md {
+    .statistic{
+    
+        .inflation-statistic{
+            padding: 0 1rem;
+            
+    
+            .viewmore-sort-list{
+                .content-more-sort-inflation{
+
+    
+                    .body-sort-inflation-list{
+                        padding: 0rem 0rem;
+                        
+                    }
+
+    
+
+                }
+            }
+        }
+        
+    }
+}

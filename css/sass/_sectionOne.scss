@@ -1,0 +1,157 @@
+
+
+#inflation{
+    @include flexMix(100%, 100%,none, center, column, transparent);
+    gap: 1rem;
+    scroll-margin: -5rem;
+
+
+    .line-bottom {
+        @include span(90%, 3px);
+        margin-top: 5rem;
+        &:not(:hover){
+            background-color: map-get($colors, 'text-color-secondary');
+          }
+    }
+
+    .header-inflation{
+        display: flex;
+        gap: 1rem;
+        width: 80%;
+      .span-header{
+        @include FlexCenter();
+        flex-direction: column;
+        gap: 1rem;
+
+        span{
+            @include span(10rem, 3px);
+            &:not(:hover){
+                background-color: map-get($colors, 'text-color-secondary');
+              }
+        }
+      }
+
+      .head-name{
+        @include headColor();
+        font-weight: map-get($fontWeight, 'xxxl'); 
+        font-size: clamp(2rem, 0.75rem + 4vw, 3rem);
+      }
+    }
+
+
+    .body-inflation{
+        @include sectionFlex();
+
+        .content-inflation{
+            @include flexMix(100%, 80%,flex, center,column, transparent );
+            gap: 2rem;
+
+            .top-inflation{
+                @include FlexCenter();
+                gap: 1rem;
+                .wrapper-inflation-top{
+                    @include wrapper();
+                    padding: 4rem 2rem;
+                    .content{
+                        @include flexcolumn();
+                        gap: 0.5rem;
+                        .head-inflation-name{
+                            @include headColor();
+                            font-size: clamp(1.5rem, 0.875rem + 2vw, 2rem);
+                            font-weight: map-get($fontWeight, 'xl'); 
+                        }
+                        .head-inflation-info{
+                            @include infotextColor();
+                            font-size: clamp(0.9rem, 0.55rem + 0.8vw, 1.1rem);
+                        }
+                    }
+                }
+            }
+            
+
+            .bottom-inflation{
+               @include FlexCenter();
+               .wrapper-inflation-bottom{
+                @include wrapper( );
+                padding: 4rem 2rem;
+                    .content{
+                        @include flexcolumn();
+                        gap: 0.5rem;
+                        .header-bottom{
+                            @include headColor();
+                            font-size: clamp(1.5rem, 0.875rem + 2vw, 2rem);
+                            font-weight: map-get($fontWeight, 'xl'); 
+                        }
+
+                        .head-bottom-info-inflation{
+                            @include infotextColor();
+                            font-size: clamp(0.9rem, 0.55rem + 0.8vw, 1.1rem);
+                        }
+                    }
+               }
+            }
+        }
+    }
+}
+
+
+@include xl{
+    #inflation{
+        .body-inflation{
+            .content-inflation{
+                gap: 1rem;
+                .top-inflation{
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
+
+@include lg{
+    #inflation{
+
+
+        .header-inflation{
+            width: 95%;
+            .span-header{
+                span{
+                    @include span(5rem, default);
+                }
+            }
+        }
+
+        .body-inflation{
+           
+            .content-inflation{
+               
+                @include flexMix(100%, 95%,flex, center,column, transparent );
+                // .top-inflation{
+                    
+                // }
+                // .bottom-inflation{
+                    
+                // }
+            }
+        }
+    }
+}
+
+@include md{
+    #inflation{
+        .body-inflation{
+            .content-inflation{
+                .top-inflation{
+                    .wrapper-inflation-top{
+                        padding:  1rem 1rem;
+                    }
+                }
+                .bottom-inflation{
+                    .wrapper-inflation-bottom{
+                        padding: 1rem 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

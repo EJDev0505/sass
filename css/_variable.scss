@@ -1,0 +1,248 @@
+$primary: #161931;
+$secondary: #f7f7f7;
+$heading-color-primary: #f7f7f7;
+$heading-color-secondary: #FFA600;
+$info-color: #000;
+$bg-wrapper: #dadada48;
+$bg-header: #FFA600;
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+$info-wrapper-color: #f7f7f76c;
+
+@use 'sass:math';
+
+$colors:(
+    "primary": $primary,
+    "secondary": $secondary,
+    "text-color-primary": $heading-color-primary,
+    "text-color-secondary": $heading-color-secondary,
+    "info-color": $info-color,
+    "bg-wrapper": $bg-wrapper,
+    "bg-all": $bg-header,
+    "wrapper-color": $info-wrapper-color,
+);
+
+$padding:(
+    "normal": 0,
+    "sm":  1rem,
+    "m": 2rem,
+    "l":   4rem,
+    "xl":  6rem,
+    "xxl":  8rem,
+    "xxxl": 10rem,
+);
+
+$margin:(
+    "normal": 0,
+    "sm":  1rem,
+    "m": 2rem,
+    "l":   4rem,
+    "xl":  6rem,
+    "xxl":  8rem,
+    "xxxl": 10rem
+);
+
+
+
+$borderRadius:(
+    "default": 0,
+    "sm": 1px,
+    "m": 3rem,
+    "l": 5px,
+    "xl": 10px,
+    "xxl": 50px,
+    "xxxl": 50%,
+);
+
+$fontWeight:(
+    "default": 100,
+    "sm": 300,
+    "m": 500,
+    "l": 600,
+    "xl": 700,
+    "xxl": 800,
+    "xxxl": 900,
+);
+
+@mixin hover($color){
+    scale: 1.1;
+    color: $color;
+}
+@mixin wrapper(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: map-get($colors, 'bg-wrapper');
+    padding-left: 3rem;
+   
+}
+
+@mixin wrapperSort{
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5rem;
+  background-color: map-get($colors, 'bg-wrapper');
+}
+
+@mixin links ($width, $height, $padding){
+    display: none;
+  
+    background-color: #ABB8C3;
+    position: absolute;
+    width: $width;
+    gap: 2rem;
+    height: $height;
+    padding: $padding;
+    top: 3rem;
+    z-index: 2;
+}
+
+
+@mixin bgPrimaryColor(){
+    background-color: map-get($colors, 'primary');
+}
+
+@mixin svg(){
+    position: absolute;
+    bottom: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    transform: rotate(180deg);
+    z-index: -1;
+  }
+
+
+  @mixin span($rem, $height){
+    background-color: map-get($colors, 'text-color-primary');
+    width: $rem;
+    height: $height;
+    &:hover{
+        background-color: map-get($colors, 'text-color-secondary');
+    }
+  }
+
+
+@mixin FlexCenter(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+
+  @mixin Flexleft(){
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+  }
+
+  
+  @mixin flexCommand($space){
+    display: flex;
+    align-items: center;
+    justify-content: $space;
+    width: 100%;
+
+  }
+
+
+  @mixin flexcolumn(){
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+  }
+
+
+  
+  @mixin sectionFlex(){
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @mixin vh(){
+    width: 100%;
+    height: 100vh;
+  }
+
+  @mixin percent(){
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+  @mixin headColor(){
+    color: map-get($colors, 'text-color-secondary');
+    font-weight: map-get($fontWeight, 'xl');
+  }
+
+  @mixin infoColor(){
+   color: map-get($colors, 'text-color-primary');
+   font-size: 1.1rem;
+  }
+
+  @mixin infotextColor(){
+    color: map-get($colors, 'wrapper-color');
+    font-size: 1.1rem;
+   }
+
+  @mixin letterStyle($letter, $decoration, $color){
+    text-transform: $letter;
+    letter-spacing: 1px;
+    text-decoration: $decoration;
+    color: $color;
+  }
+
+  
+
+
+@mixin flexMix($height,$width,$flex, $justify, $command, $backgroundColor){
+    height: $height;
+    width: $width;
+    display: $flex;
+    align-items: center;
+    justify-content: $justify;
+    flex-direction: $command;
+    background-color: $backgroundColor;
+}
+
+
+%heroCenter{
+  text-align: center;
+}
+
+%buttton{
+  background-color: map-get($colors, 'text-color-secondary');
+  color: map-get($colors, 'text-color-primary');
+  padding: 0.5rem;
+  width: 10rem;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+
+
+// $padding: (
+//   'sm': 4px,
+//   'md': 8px,
+//   'lg': 12px,
+//   'xl': 14px,
+// );
+
+// @each $direction, $value in $spacing{
+// .#{$direction}-#{$value}{
+//   margin-#{$direction}: $value;
+//   padding-#{$direction}: $value;
+// }
+// }

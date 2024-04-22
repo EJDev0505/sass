@@ -1,0 +1,308 @@
+
+
+#sort-inflation{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    .body-sort-inflation{
+        @include FlexCenter();
+        flex-direction: column;
+        width: 100%;
+        
+        .header-sort{
+            @include FlexCenter();
+            flex-direction: column;
+            @extend %heroCenter;
+            gap: 1rem;      
+            width: 80%;   
+            
+            .header-sort-name{
+                @include headColor();
+                font-size: clamp(1rem, -0.25rem + 4vw, 2rem);
+                margin-top: 10rem;
+                font-weight: map-get($fontWeight, 'xl');   
+            }
+
+            .header-sort-info{
+                @include infotextColor();
+                font-size: clamp(0.8rem, 0.65rem + 0.8vw, 1.1rem); 
+            }
+        }
+
+        .list-sort{
+            align-items: center;
+            overflow: hidden;
+            width: 80%;
+            height: 100vh;
+
+            .sort{
+                @include FlexCenter();
+                gap: 1rem;
+                margin-top: 10rem;
+                
+
+                .even{
+                    @include flexcolumn();
+                    gap: 1rem;
+
+                    .wrapper-sort-even{
+                        @include wrapperSort();
+                        overflow: hidden;
+    
+                        .wrapper-info-sort{
+                        @include flexcolumn();
+                        gap: 0.5rem;
+    
+                        .sort-top-name{
+                            @include flexCommand(space-between);
+
+                            .name-country-sort{
+                                @include headColor();
+                                font-size: 1.5rem;
+                                font-weight: map-get($fontWeight, 'xl'); 
+                            }
+    
+                            svg{
+                               width: 2rem;
+                               @include headColor();
+                            }
+                        }
+
+                        .sort-bottom-info{
+                            @include infotextColor();
+                            font-size: 16px;
+                        }
+
+                        .see-more-data{
+                            @include flexcolumn();
+                            @include percent();
+
+                            .button-see-more-data{
+                                margin-left: auto;
+                                display: flex;
+                                @include FlexCenter();
+                                @include headColor();
+                                gap: 0.2rem;
+                                cursor: pointer;
+
+                                .see-more{
+                                    display: flex;
+                                }
+                                .see-less{
+                                    display: none;
+                                }
+
+                                #see-less-icon{
+                                    display: none;
+                                    width: 1rem;
+                                    padding-top: 0.3rem;
+                                    
+                                }
+                                #see-more-icon{
+                                    display: flex;
+                                    width: 1rem;
+                                    padding-top: 0.3rem;
+                                }
+                            
+                            }
+                        }
+
+                        .button-see-more-data-info{
+                            @include Flexleft;
+                            display: none;
+                        }
+                        }
+                    }   
+                }
+
+                .odd{
+                    @include flexcolumn();
+                    gap: 1rem;
+
+                    .wrapper-sort-odd{
+                        @include wrapperSort();
+                        overflow: hidden;
+                        .wrapper-info-sort{
+                        @include flexcolumn();
+                        gap: 0.5rem;
+    
+                        .sort-top-name{
+                            @include flexCommand(space-between);
+
+                            .name-country-sort{
+                                @include headColor();
+                                font-size: 1.5rem;
+                                font-weight: map-get($fontWeight, 'xl'); 
+                            }
+    
+                            svg{
+                               width: 2rem;
+                               @include headColor();
+                            }
+                        }
+
+                        .sort-bottom-info{
+                            @include infotextColor();
+                            font-size: 16px;
+                        }
+
+                        .see-more-data{
+                            @include flexcolumn();
+                            @include percent();
+
+                            .button-see-more-data{
+                                margin-left: auto;
+                                display: flex;
+                                @include FlexCenter();
+                                @include headColor();
+                                gap: 0.2rem;
+                                cursor: pointer;
+
+                                .see-more{
+                                    display: flex;
+                                }
+                                .see-less{
+                                    display: none;
+                                }
+
+                                #see-less-icon{
+                                    display: none;
+                                    width: 1rem;
+                                    padding-top: 0.3rem;
+                                    
+                                }
+                                #see-more-icon{
+                                    display: flex;
+                                    width: 1rem;
+                                    padding-top: 0.3rem;
+                                }
+                            
+                            }
+                        }
+
+                        .button-see-more-data-info{
+                            @include Flexleft;
+                            display: none;
+                        }
+                        }
+                    }  
+                }
+
+                
+            }
+        }
+
+
+        .button{
+            @include FlexCenter();
+            @include percent();
+            gap: 0.5rem;
+            flex-direction: column;
+            @include headColor();
+            animation: bounce 1s linear infinite;
+
+            #button-see-more-list{
+                width: 2rem;
+                cursor: pointer;
+                
+            }
+
+            #button-see-more-back{
+                width: 2rem;
+                display: none;
+                cursor: pointer;
+                rotate: 180deg;
+            }
+
+            #see-more{
+                display: flex;
+                gap: 0.5rem;
+                text-transform: capitalize;
+            }
+            #see-less{
+                display: none;
+                gap: 0.5rem;
+                text-transform: capitalize;
+                
+            }
+        }
+    }
+}
+
+@keyframes bounce {
+    0%{
+        transform: translateY(0px);
+    }50%{
+        transform: translateY(5px);
+    }100%{
+        transform: translateY(0px);
+    }
+}
+
+
+@include xxl{
+    #sort-inflation{
+        .body-sort-inflation{
+            .header-sort{
+                width: 100%;
+            }
+
+            .list-sort{
+                width: 100%;
+            }
+        }
+    }
+}
+
+@include llg{
+    #sort-inflation{
+        .body-sort-inflation{
+            
+            .list-sort{
+                
+                .sort{
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
+
+
+
+// @include lg{
+//     #sort-inflation{
+//         .body-sort-inflation{
+//             width: 95%;
+//         }
+//     }
+// }
+
+
+@include md{
+    #sort-inflation{
+        .body-sort-inflation{
+            .list-sort{
+                .sort{
+                    .even{
+                        .wrapper-sort-even{
+                            height: auto;
+                            padding: 2rem;
+                        }
+                    }
+
+                    .odd{
+                        .wrapper-sort-odd{
+                            height: auto;
+                            padding: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
