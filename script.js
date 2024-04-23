@@ -1,3 +1,5 @@
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+
 const bar = document.querySelector('.load-bar');
 const loadingPage = document.querySelector('.laoding-page');
 const videoElement = document.querySelector('#sound-website');
