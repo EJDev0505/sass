@@ -46,10 +46,6 @@ const inflationPadding = document.querySelector('#inflation');
 let lastClickedSectionId = 0;
 
 
-// function defaultDisplay(){
-//     hero.style.display =  'flex';
-// }
-
 
 ulA.forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -155,13 +151,6 @@ function Animation(){
 }
 
 
-
-
-// navportfoliolink.forEach(item => {
-//     item.addEventListener('click', () => {
-//         navportfolio.style.display = 'none';
-//     });
-// });
 
 
 
@@ -298,39 +287,10 @@ document.querySelectorAll('path[data-name]').forEach(path => {
 });
 
 
-
-
-
-
-
-
-
-
-// const bodysort = document.querySelector('.body-sort-inflation-list');
-
-// const rect = bodysort.getBoundingClientRect();
-
-//     if(rect.bottom <= window.innerHeight){
-//         const rateInflationElements = document.querySelectorAll('#rate-inflation');
-
-
-// }
     
 
 document.addEventListener('scroll', () => {
     const rateInflationElements = document.querySelectorAll('#rate-inflation');
-    // const style = document.createElement('style');
-
-    // style.textContent = `
-    //         @keyframes width {
-    //             0% {
-    //                 width: 0;
-    //             }
-    //             100% {
-    //                 width: ${width};
-    //             }
-    //         }
-    //     `;
     
         rateInflationElements.forEach(element => {
 
@@ -353,16 +313,6 @@ document.addEventListener('scroll', () => {
 
 
 
-// window.addEventListener('resize', () => {
-//     if(window.innerWidth < 600){
-//         bodylist.style.display = 'grid';
-//         bodylist.style.gridTemplateRows = 'repeat(2, 0fr)';
-//         bodylist.style.gridTemplateColumns = '1fr';
-//         bodylist.style.gap = '8px';
-//     }else{
-//         bodylist.style.height = '100vh';
-//     }
-// });
     const Seemorelist = document.querySelector('#button-see-more-list');
     const Seemorelistback = document.querySelector('#button-see-more-back');
     const Seeless = document.querySelector('#see-less');
@@ -408,68 +358,4 @@ function bodyback (){
 
 
 
-//     const seebutonnData = document.querySelectorAll('.button-see-more-data');
-//     const Info = document.querySelector('.button-see-more-data-info');
-//     const seemore = document.querySelector('.see-more');
-//     const seeless = document.querySelector('.see-less');
-//     const seemoreIcon = document.querySelector('#see-more-icon');
-//     const seelessIcon = document.querySelector('#see-less-icon');
 
-
-//     let open = false;
-
-//     seebutonnData.forEach(button => {
-//          button.addEventListener('click', ()=> {
-//             if(button){
-
-//                 openData();
-//             }else{
-//                 closeData();
-//             }
-            
-//         });
-//     });
-
-   
-// function closeData(){
-//     Info.style.display = 'none';
-//     seeless.style.display = 'none';
-//     seemore.style.display = 'flex';
-//     seemoreIcon.style.display = 'flex';
-//     seelessIcon.style.display = 'none';
-// }
-
-// function openData (){
-//     Info.style.display ='flex';
-//     seeless.style.display = 'flex';
-//     seemore.style.display = 'none';
-//     seemoreIcon.style.display = 'none';
-//     seelessIcon.style.display = 'flex';
-// }
-
-
-// const idTr = document.querySelector('tr[id]');
-// const input = document.querySelector('#Search');
-
-// input.addEventListener('click', (e) => {
-//     if(input.value){
-//         idTr.style.backgroundColor = 'red';
-//     }
-// });
-
-// const input = document.querySelector('#Search');
-// const tableBody = document.querySelector('table tbody'); // Assuming your countries are within a tbody element
-
-// input.addEventListener('keyup', (e) => {
-//   const searchTerm = e.target.value.toUpperCase(); // Get search term and convert to lowercase
-//   const tableRows = tableBody.querySelectorAll('tr');
-
-//   tableRows.forEach(row => {
-//     const countryName = row.querySelector('td:nth-child(2)').textContent.toUpperCase(); // Get country name from second cell (adjust selector if needed)
-//     if (countryName.includes(searchTerm)) {
-//       row.style.backgroundColor = 'yellow'; // Highlight matching rows with yellow background (change as desired)
-//     } else {
-//       row.style.backgroundColor = ''; // Reset background color for non-matching rows
-//     }
-//   });
-// });
